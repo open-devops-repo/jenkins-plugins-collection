@@ -35,7 +35,7 @@ Change the Jenkins version in:
     # update specification
     vi Dockerfile
     vi VERSION
-    # maybe you also want or need to update plugins.txt/plugins-latest.txt (see next section)
+    # maybe you also want or need to update plugins.txt (see next section)
 
     # push
     git add -A .
@@ -53,15 +53,12 @@ How to build with an updated plugins.txt
 
     # update specification
     vi plugins.txt
-    vi plugins-latest.txt
     vi VERSION
     
     # push
     git add -A .
     git commit -m "Updated plugins.txt"
     git push
-
-Important: plugins.txt and plugins-latest.txt should always be in sync.
 
 About a minute after git push the new Docker image should be available
 as opendevopsrepo/jenkins-plugins-collection:VERSION. 
@@ -75,15 +72,18 @@ How to retrieve the latest plugin versions to set them in plugins.txt
     # run locally, not on CI
     # (downloads and later removes all plugins - 
     #  so it can take a while depending on your internet connection)
-    cat plugins-latest.txt | docker run --rm -i jenkins/jenkins:2.289 /usr/local/bin/install-plugins.sh
+    awk -F ':' < plugins.txt '{print $1":latest"}' > /tmp/plugins-latest.txt
+    cat /tmp/plugins-latest.txt | docker run --rm -i jenkins/jenkins:2.289 /usr/local/bin/install-plugins.sh
 
     # then take the version numbers of the from the actually used plugins
     # from the end of the output in section "Installed plugins:"
     # and use them as version numbers in "plugins.txt"
 
     # safe cleanup
+    rm /tmp/plugins-latest.txt
     docker system prune
     # or full cleanup (delete all local docker images)
+    rm /tmp/plugins-latest.txt
     docker system prune -a --volumes
         
 
