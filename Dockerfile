@@ -1,17 +1,14 @@
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-WORKDIR /root/
-RUN echo "----- ubuntu:latest" >> /root/resultfile1
-RUN date >> /root/resultfile1
-RUN cat /etc/os-release >> /root/resultfile1
-RUN ls -l /etc/ >> /root/resultfile1
+# 1st container: download plugins listed in plugins.txt (big jenkins container)
+FROM jenkins/jenkins:2.289
+WORKDIR /
+RUN mkdir -p /tmp/transfer
+COPY plugins.txt /tmp/transfer/plugins.txt
+RUN sh -c "REF=/tmp/transfer /usr/local/bin/install-plugins.sh < /tmp/transfer/plugins.txt"
 
+# 2nd container: copy plugins into /plugins (tiny alpine container)
 FROM alpine:latest  
-RUN apk --no-cache add ca-certificates
-WORKDIR /root/
-COPY --from=0 /root/resultfile1 /root/resultfile2
-RUN echo "----- alpine:latest" >> /root/resultfile2
-RUN date >> /root/resultfile2
-RUN cat /etc/os-release >> /root/resultfile2
-RUN ls -l /etc/ >> /root/resultfile2
-CMD ["/bin/sh", "-c", "ls -l /root; cat /root/resultfile2"]
+WORKDIR /
+COPY . /src/
+COPY --from=0 /tmp/transfer/plugins /plugins/
+CMD ["/bin/sh", "-c", "ls -l /plugins"]
+
