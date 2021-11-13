@@ -25,6 +25,7 @@ jobs:
 
       - name: Set env variable "VERSION" from file
         run: |
+          pwd
           VER=$(cat VERSION)
           echo "VERSION=$VER" >> $GITHUB_ENV
 
