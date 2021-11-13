@@ -87,8 +87,8 @@ How to retrieve the latest plugin versions to set them in plugins.txt
     docker system prune -a --volumes
         
 
-How to for this repo and its automatic CI builds
-------------------------------------------------
+How to fork this repo and its automatic CI builds
+-------------------------------------------------
 * have a GitHub.com and a hub.docker.com account ready
 * fork this git repo into your own GitHub.com repo
 * create an hub.docker.com access token (https://hub.docker.com/settings/security)
