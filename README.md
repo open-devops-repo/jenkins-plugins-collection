@@ -3,7 +3,7 @@ jenkins-plugins-collection
 
 Introduction
 ------------
-This Project builds a Docker image that contains pre-loaded Jenkins plugins.
+This project builds a Docker image that contains pre-loaded Jenkins plugins.
 
 The Docker images are hosted on hub.docker.com as "opendevopsrepo/jenkins-plugins-collection:VERSION" and contain a /plugins directroy that contains the pre-loaded Jenkins plugins.
 
@@ -73,17 +73,13 @@ How to retrieve the latest plugin versions to set them in plugins.txt
     # (downloads and later removes all plugins - 
     #  so it can take a while depending on your internet connection)
     cat plugins-latest.txt | docker run --rm -i jenkins/jenkins:2.289 /usr/local/bin/install-plugins.sh
-    
+
     # then take the version numbers of the from the actually used plugins
     # from the end of the output in section "Installed plugins:"
-    # and use them as version numbers in
-    #
-    # plugins.txt
-    
+    # and use them as version numbers in "plugins.txt"
 
     # safe cleanup
     docker system prune
-        
     # or full cleanup (delete all local docker images)
     docker system prune -a --volumes
         
@@ -93,10 +89,11 @@ How to for this repo and its automatic CI builds
 * have a GitHub.com and a hub.docker.com account ready
 * fork this git repo into your own GitHub.com repo
 * create an hub.docker.com access token (https://hub.docker.com/settings/security)
-* set this hub.docker.com access token in your hub.docker.com secrets (https://hub.docker.com/settings/security)
-    * set DOCKERHUB_USERNAME=<your hub.docker.com user name>
-    * set DOCKERHUB_TOKEN=<your hub.docker.com access token from above>
-* in .github/workflows/github-actions.yml replace tag "opendevopsrepo/jenkins-plugins-collection" with "<your-hub.docker.com username>/<your new hub.docker.com repo name>
+* set this hub.docker.com access token in your GitHub.com repo settings/secrets (https://github.com/{your GitHub.com username}/{your GitHub.com repo name}/settings/secrets/actions)
+    * set DOCKERHUB_USERNAME={your hub.docker.com user name}
+    * set DOCKERHUB_TOKEN={your hub.docker.com access token from above}
+* in .github/workflows/github-actions.yml replace tag "opendevopsrepo/jenkins-plugins-collection" with "{your hub.docker.com username}/{your new hub.docker.com repo name}"
+* set a Readme text on hub.docker.com (https://hub.docker.com/repository/docker/{your hub.docker.com username}/{your new hub.docker.com repo name}/general)
 
 After this setup, every push to "main" branch in your GitHub.com repo should trigger a CI build that uploads the docker image to your hub.docker.com repo.
 
