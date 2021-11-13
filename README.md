@@ -5,7 +5,7 @@ Introduction
 ------------
 This Project builds a Docker image that contains pre-loaded Jenkins plugins.
 
-The Docker images are hosted on hub.docker.com as "opendevopsrepo/jenkins-plugins-collection:<VERSION>" and contain a /plugins directroy that contains the pre-loaded Jenkins plugins.
+The Docker images are hosted on hub.docker.com as "opendevopsrepo/jenkins-plugins-collection:VERSION" and contain a /plugins directroy that contains the pre-loaded Jenkins plugins.
 
 You can see all avalable versions under
 (https://hub.docker.com/r/opendevopsrepo/jenkins-plugins-collection/tags)
@@ -42,8 +42,7 @@ Maybe you also need to update plugins.txt/plugins-latest.txt (see next section).
     git push
 
 About a minute after git push the new Docker image should be available
-as opendevopsrepo/jenkins-plugins-collection:<VERSION>
-
+as opendevopsrepo/jenkins-plugins-collection:VERSION
 You can check the availability under
 (https://hub.docker.com/r/opendevopsrepo/jenkins-plugins-collection/tags)
 
@@ -62,8 +61,7 @@ How to build with an updated plugins.txt
 Important: plugins.txt and plugins-latest.txt should always be in sync.
 
 About a minute after git push the new Docker image should be available
-as opendevopsrepo/jenkins-plugins-collection:<VERSION>
-
+as opendevopsrepo/jenkins-plugins-collection:VERSION. 
 You can check the availability under
 (https://hub.docker.com/r/opendevopsrepo/jenkins-plugins-collection/tags)
 
