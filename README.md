@@ -30,19 +30,20 @@ Here is an (stupid) example of using such Docker image (in real live you will pr
 How to build for a different Jenkins version
 --------------------------------------------
 
-Change the Jenkins version:
+Change the Jenkins version in:
 
+    # update specification
     vi Dockerfile
     vi VERSION
+    # maybe you also want or need to update plugins.txt/plugins-latest.txt (see next section)
 
-Maybe you also need to update plugins.txt/plugins-latest.txt (see next section).
-
+    # push
     git add -A .
     git commit -m "Updated Jenkins version"
     git push
 
 About a minute after git push the new Docker image should be available
-as opendevopsrepo/jenkins-plugins-collection:VERSION
+as opendevopsrepo/jenkins-plugins-collection:VERSION.
 You can check the availability under
 (https://hub.docker.com/r/opendevopsrepo/jenkins-plugins-collection/tags)
 
@@ -54,6 +55,8 @@ How to build with an updated plugins.txt
     vi plugins.txt
     vi plugins-latest.txt
     vi VERSION
+    
+    # push
     git add -A .
     git commit -m "Updated plugins.txt"
     git push
@@ -89,11 +92,11 @@ How to for this repo and its automatic CI builds
 * have a GitHub.com and a hub.docker.com account ready
 * fork this git repo into your own GitHub.com repo
 * create an hub.docker.com access token (https://hub.docker.com/settings/security)
-* set this hub.docker.com access token in your GitHub.com repo settings/secrets (https://github.com/{your GitHub.com username}/{your GitHub.com repo name}/settings/secrets/actions)
+* set this hub.docker.com access token in your GitHub.com repo settings/secrets (https://github.com/your-GitHub.com-username/your-GitHub.com-repo-name/settings/secrets/actions)
     * set DOCKERHUB_USERNAME={your hub.docker.com user name}
     * set DOCKERHUB_TOKEN={your hub.docker.com access token from above}
 * in .github/workflows/github-actions.yml replace tag "opendevopsrepo/jenkins-plugins-collection" with "{your hub.docker.com username}/{your new hub.docker.com repo name}"
-* set a Readme text on hub.docker.com (https://hub.docker.com/repository/docker/{your hub.docker.com username}/{your new hub.docker.com repo name}/general)
+* set a Readme text on hub.docker.com (https://hub.docker.com/repository/docker/your-hub.docker.com-username/your-new-hub.docker.com-repo-name/general)
 
 After this setup, every push to "main" branch in your GitHub.com repo should trigger a CI build that uploads the docker image to your hub.docker.com repo.
 
