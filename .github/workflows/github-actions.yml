@@ -9,6 +9,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -26,6 +29,7 @@ jobs:
       - name: Set env variable "VERSION" from file
         run: |
           pwd
+          ls -l
           VER=$(cat VERSION)
           echo "VERSION=$VER" >> $GITHUB_ENV
 
