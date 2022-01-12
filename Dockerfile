@@ -1,5 +1,5 @@
 # 1st container: download plugins listed in plugins.txt (big jenkins container)
-FROM jenkins/jenkins:2.289
+FROM jenkins/jenkins:2.319.1-jdk11
 WORKDIR /
 RUN mkdir -p /tmp/transfer
 COPY plugins.txt /tmp/transfer/plugins.txt

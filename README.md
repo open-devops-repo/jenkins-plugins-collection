@@ -16,10 +16,12 @@ How to use the Docker image
 Here is an (stupid) example of using such Docker image (in real live you will probably combine such Docker image with other Docker images, e.g. in a Kubernetes environment):
 
     # show all plugins
-    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 ls -l /plugins
+    #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 ls -l /plugins
+    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.319.1-pluginset.2-20220112 ls -l /plugins
 
     # show the versions of the specified plugins (i.e. without the dependencies):
-    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 cat /src/plugins.txt
+    #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 cat /src/plugins.txt
+    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.319.1-pluginset.2-20220112 cat /src/plugins.txt
 
     # safe cleanup
     docker system prune
@@ -98,5 +100,5 @@ How to fork this repo and its automatic CI builds
 * in .github/workflows/github-actions.yml replace tag "opendevopsrepo/jenkins-plugins-collection" with "{your hub.docker.com username}/{your new hub.docker.com repo name}"
 * set a Readme text on hub.docker.com (https://hub.docker.com/repository/docker/your-hub.docker.com-username/your-new-hub.docker.com-repo-name/general)
 
-After this setup, every push to "main" branch in your GitHub.com repo should trigger a CI build that uploads the docker image to your hub.docker.com repo.
+After this setup, every push to "main" branch in your GitHub.com repo should trigger a CI build (GitHub action) that uploads the docker image to your hub.docker.com repo.
 
