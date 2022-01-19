@@ -1,4 +1,4 @@
-active-directory:2.25
+active-directory:2.25.1
 ansible:1.1
 ant:1.13
 antisamy-markup-formatter:2.7
@@ -11,9 +11,9 @@ build-timeout:1.20
 build-with-parameters:1.6
 buildtriggerbadge:2.11
 bumblebee:4.1.8
-calendar-view:0.3.1
+calendar-view:0.3.2
 categorized-view:1.12
-cloudbees-folder:6.16
+cloudbees-folder:6.17
 cloudfoundry:2.3.2
 cobertura:1.17
 codebeamer-coverage-publisher:1.4
@@ -22,7 +22,7 @@ codebeamer-xunit-importer:1.9
 config-driven-pipeline:1.3
 configuration-as-code:1.55
 copyartifact:1.46.2
-credentials-binding:1.27
+credentials-binding:1.27.1
 custom-build-properties:1.9.1
 delivery-pipeline-plugin:1.4.2
 depgraph-view:1.0.5
@@ -31,25 +31,25 @@ email-ext:2.86
 embeddable-build-status:2.0.3
 envinject:2.4.0
 external-monitor-job:1.7
-fitnesse:1.35
-generic-webhook-trigger:1.79
-git-changelog:3.15
+fitnesse:1.36
+generic-webhook-trigger:1.80
+git-changelog:3.17
 git-parameter:0.9.14
-git:4.10.1
+git:4.10.3
 github-branch-source:2.11.4
 gitlab-logo:1.0.5
 gitlab-plugin:1.5.27
 gradle:1.38
 hp-application-automation-tools-plugin:7.2
 hp-quality-center:1.6
-jacoco:3.3.0
+jacoco:3.3.1
 job-import-plugin:3.4
 junit-attachments:1.7
 kubernetes:1.31.3
 ldap:2.7
 linenumbers:1.3
 m2release:0.16.2
-mailer:391.ve4a_38c1b_cf4b_
+mailer:408.vd726a_1130320
 mask-passwords:3.0
 matrix-auth:3.0
 mattermost:3.1.1
@@ -67,7 +67,6 @@ pipeline-stage-view:2.20
 postbuild-task:1.9
 postbuildscript:3.1.0-348.vaf5cd5c632ce
 project-build-times:1.2.1
-publish-over-ssh:1.22
 pyenv-pipeline:2.1.2
 python:1.3
 repository-connector:2.2.0
@@ -90,13 +89,13 @@ throttle-concurrents:2.6
 timestamper:1.16
 versionnumber:1.9
 violation-comments-to-gitlab:2.52
-warnings-ng:9.10.2
+warnings-ng:9.11.0
 weblogic-deployer-plugin:4.1
 windows-slaves:1.8
 workflow-aggregator:2.6
 ws-cleanup:0.40
 xunit:3.0.5
-# Plugins currently not included because the are too old:
+# Plugins currently not included because the are too old and/or suspended (https://www.jenkins.io/security/plugins/#suspensions):
 #JDK_Parameter_Plugin
 #all-changes
 #anything-goes-formatter
@@ -114,6 +113,7 @@ xunit:3.0.5
 #perl-smoke-test
 #phing
 #pom2config
+#publish-over-ssh:1.22
 #qc
 #remote-terminal-access
 #simple-build-for-pipeline

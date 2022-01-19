@@ -75,11 +75,13 @@ How to retrieve the latest plugin versions to set them in plugins.txt
     # (downloads and later removes all plugins - 
     #  so it can take a while depending on your internet connection)
     awk -F ':' < plugins.txt 'NF {print $1":latest"}' | grep -v "#" > /tmp/plugins-latest.txt
-    cat /tmp/plugins-latest.txt | docker run --rm -i jenkins/jenkins:2.319.1-jdk11 /usr/local/bin/install-plugins.sh
+    cat /tmp/plugins-latest.txt | docker run --rm -i jenkins/jenkins:2.319.1-jdk11 /usr/local/bin/install-plugins.sh | tee /tmp/plugins-latest.txt
 
     # then take the version numbers of the from the actually used plugins
     # from the end of the output in section "Installed plugins:"
     # and use them as version numbers in "plugins.txt"
+    diff plugins.txt /tmp/plugins-latest.txt
+    vi /tmp/plugins-latest.txt
 
     # safe cleanup
     rm /tmp/plugins-latest.txt
