@@ -66,7 +66,6 @@ pipeline-multibranch-defaults:2.1
 pipeline-stage-view:2.20
 postbuild-task:1.9
 postbuildscript:3.1.0-348.vaf5cd5c632ce
-project-build-times:1.2.1
 pyenv-pipeline:2.1.2
 python:1.3
 repository-connector:2.2.0
@@ -113,6 +112,7 @@ xunit:3.0.5
 #perl-smoke-test
 #phing
 #pom2config
+#project-build-times:1.2.1 - "Build time graph broken" (https://community.jenkins.io/t/build-time-graph-broken/686/4) - plugin is very old/from 2014
 #publish-over-ssh:1.22
 #qc
 #remote-terminal-access
