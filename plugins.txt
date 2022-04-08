@@ -89,6 +89,7 @@ run-condition:1.5
 run-condition-extras:0.3
 run-selector:1.1.1
 scm-filter-branch-pr:0.5.1
+scmskip:1.0.3
 sectioned-view:1.25
 show-build-parameters:1.0
 sidebar-link:1.12.1
