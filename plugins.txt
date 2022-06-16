@@ -53,7 +53,7 @@ jacoco:3.3.2
 jira:3.7.1
 job-import-plugin:3.5
 junit-attachments:95.v69691d523620
-junit:1.59
+junit:1119.va_a_5e9068da_d7
 kubernetes:3580.v78271e5631dc
 ldap:2.9
 linenumbers:1.3
