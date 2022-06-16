@@ -40,6 +40,7 @@ generic-webhook-trigger:1.84
 git:4.11.3
 git-changelog:3.23
 github-branch-source:1628.vb_2f51293cb_78
+gitlab-branch-source:625.v85cf3a_400cfe
 gitlab-logo:1.0.5
 gitlab-oauth:1.16
 gitlab-plugin:1.5.32
