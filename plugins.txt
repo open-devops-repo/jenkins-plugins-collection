@@ -108,6 +108,7 @@ test-results-analyzer:0.3.5
 test-stability:2.3
 throttle-concurrents:2.8
 timestamper:1.17
+uno-choice:2.6.4
 versionnumber:1.9
 violation-comments-to-gitlab:2.54
 warnings-ng:9.12.0
