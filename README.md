@@ -19,13 +19,13 @@ Here is an (stupid) example of using such Docker image (in real live you will pr
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 ls -l /plugins
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.319.1-pluginset.2-20220119-2 ls -l /plugins
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.8-20220616 ls -l /plugins
-    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.8-20230104 ls -l /plugins
+    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.9-20230104 ls -l /plugins
 
     # show the versions of the specified plugins (i.e. without the dependencies):
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.289-pluginset.1-20211113 cat /src/plugins.txt
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.319.1-pluginset.2-20220119-2 cat /src/plugins.txt
     #docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.8-20220616 cat /src/plugins.txt
-    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.8-20230104 cat /src/plugins.txt
+    docker run --rm opendevopsrepo/jenkins-plugins-collection:jenkins.2.332.3-pluginset.9-20230104 cat /src/plugins.txt
 
     # safe cleanup
     docker system prune
